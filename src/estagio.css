@@ -1,0 +1,581 @@
+:root{
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url(../Fonts/HelveticaUltraLt_0.ttf) format('truetype');
+  src: url(../Fonts/HelveticaNeue-UltraLight.woff) format('woff'),
+  url(../Fonts/HelveticaNeue-UltraLight.eot),
+  url(../Fonts/HelveticaNeue-UltraLight.eot?#iefix) format('embedded-opentype'),
+  url(../Fonts/HelveticaNeue-UltraLight.svg) format('svg');
+}
+
+@font-face {
+  font-family: 'RobotoLight';
+  src: url(../Fonts/Roboto-Light.ttf) format('truetype');
+  src: url(../Fonts/Roboto-Light.woff) format('woff'),
+  url(../Fonts/Roboto-Light.eot),
+  url(../Fonts/Roboto-Light.eot?#iefix) format('embedded-opentype'),
+  url(../Fonts/Roboto-Light.svg) format('svg');
+}
+
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url(../Fonts/Roboto-Regular_0.ttf) format('truetype');
+  src: url(../Fonts/Roboto-Regular.woff) format('woff'),
+  url(../Fonts/Roboto-Regular.eot),
+  url(../Fonts/Roboto-Regular.eot?#iefix) format('embedded-opentype'),
+  url(../Fonts/Roboto-Regular.svg) format('svg');
+}
+
+@font-face {
+  font-family: 'HelveticaCondensed';
+  src: url(../Fonts/Helvetica-Condensed.ttf) format('truetype');
+  src: url(../Fonts/Helvetica-Condensed.woff) format('woff'),
+  url(../Fonts/Helvetica-Condensed.eot),
+  url(../Fonts/Helvetica-Condensed.eot?#iefix) format('embedded-opentype'),
+  url(../Fonts/Helvetica-Condensed.svg) format('svg');
+}
+
+
+/*
+=============== 
+Globais
+===============
+*/
+html {
+  scroll-behavior: smooth;
+}
+*,
+:before,
+:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.logo) {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: lighter;
+  font-family: 'HelveticaNeue';
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+/* html {
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  position: relative;
+  font-family: 'HelveticaNeue'; 
+  font-weight: lighter;
+  text-transform: uppercase;
+} */
+
+/*
+=============== 
+Sessões específicas
+===============
+*/
+@media screen and (min-width: 800px) {
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1rem;
+}
+body {
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+}
+}
+
+.section {
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+/* navbar */
+
+nav {
+  padding: 1rem 1.5rem;
+}
+@media screen and (min-width: 1050px){
+.sidebar-toggle{
+  display:none
+}
+}
+
+@media screen and (max-width: 1050px){
+
+.sidebar-toggle{
+  position:relative;
+  float: left;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color:  #29abe2;
+  transition: var(--transition);
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.nav-center {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-header{
+  margin-left: 65%;
+}
+
+.links-container {
+  height: auto;
+  transition: var(--transition);
+  position: absolute;
+  display: inline-block;
+}
+
+ul li:before {
+  display: none !important;
+  content: " ";
+}
+
+ul li{
+  margin-bottom: 10px;
+}
+
+.links{
+  text-align: left;
+  position: absolute;
+  top: 50px;
+  width: 10rem;
+  height: auto;
+  overflow: hidden;
+  background-color: #29abe2;
+  display: none;
+}
+
+}
+.sidebar-toggle:hover {
+  cursor: pointer;
+}
+
+.logo {
+  position: relative;
+  float: right;
+  height: 30px;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links {
+  display: inline-flex;
+  height: fit-content;
+}
+.links a {
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  padding: 0;
+  text-decoration: none;
+} 
+.links a:hover {
+  text-decoration: underline;
+}
+ul li{
+  display:inline-block;
+}
+
+ul li:before{
+  display: inline-block;
+  width:6px;
+  height:6px;
+  content:" ";
+  background-color: white;
+  border: 1px solid white;
+  border-radius:5px;
+  margin-right: 2px;
+}
+
+
+h1 {
+  font-size: 7rem;
+  position: relative;
+  font-family: 'HelveticaNeue';
+  font-weight: lighter;
+}
+
+h2 {
+  font-size: 3rem;
+  position: relative;
+  font-family: 'HelveticaNeue';
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1rem;
+}
+body {
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+}
+
+
+
+
+li:first-child:before{
+  display: none;
+}
+
+  /* Imagem de fundo desktop*/
+
+header{
+  background-image: url(../imagens/index-image.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 900px;
+}
+nav {
+  background: transparent;
+  text-align: center;
+}
+.nav-center {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-header {
+  padding: 0;
+}
+.banner{
+  display: grid;
+  width: 70%;
+  text-align: center;
+  padding: 11vw;
+  color: white;
+}
+
+
+.links a {
+  background: transparent;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: lowercase;
+  letter-spacing: var(--spacing);
+  display: inline;
+  transition: var(--transition);
+  margin: 0 1rem;
+  font-weight: bold;
+  padding: 0;
+}
+.links a:hover {
+  color: white;
+}
+
+.table{
+  text-align: center;
+  overflow-wrap: break-word;
+  table-layout: fixed;
+  height: 300px;
+  position: relative;
+  width: 60%;
+  border-collapse: collapse;
+  border-style: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  font-size: 1vw;
+  justify-content: space-between;
+  margin-top: 5vw;
+  padding: auto;
+}
+.table th{
+  color: #012d51;
+  text-transform: uppercase;
+}
+.table td, tr, th{
+  border: 2px solid  #29abe2;
+}
+
+#firstTH{
+  width: 100px;
+}
+
+.table tr, td {
+  color: #808080;
+}
+
+
+/* Imagem de fundo mobile*/
+
+@media screen and (max-width: 800px){
+
+  .logo{
+    position: relative;
+    float: right;
+  }
+
+header{
+  background: url(../imagens/index-image-mobile.jpg) center/cover no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 1000px;
+}
+
+.banner{
+  display: grid;
+  width: 100%;
+  text-align: center;
+  padding: 11vw;
+  color: white;
+}
+
+.table{
+  overflow: hidden;
+  overflow-wrap: break-word;
+  table-layout: fixed;
+  height: auto;
+  width: 100%;
+  border-style: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  font-size: 2.5vw;
+  justify-content: space-between;
+  margin-top: 5vw;
+  padding: auto;
+}
+.table th{
+  color: #012d51;
+  text-transform: uppercase;
+}
+.table td, tr, th{
+  border: 2px solid  #29abe2;
+}
+
+#firstTH{
+  width: 100px;
+}
+
+.table tr, td {
+  color: #808080;
+}
+
+footer {
+  background: url(../imagens/rodape-mobile.jpg);
+  text-align: center;
+  letter-spacing: var(--spacing);
+  margin-bottom: 0;
+}
+
+}
+
+/*Sessões*/
+
+.title h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+#cadastro,
+#lista {
+  height: auto;
+  min-height: 40vw;
+}
+
+/*Cadastro*/
+
+#cadastro{
+  background: #29abe2;
+  color: white;
+  padding: 3%;
+  text-align: center;
+}
+
+.form{
+  text-align: left !important;
+  margin: auto;
+  margin-top: auto;
+  width: 30%;
+}
+
+input[type=text]{
+  font-family: 'HelveticaCondensed';
+  font-size: larger;
+  color: white;
+  background:transparent !important;
+  border: transparent;
+  border-bottom: 2px solid white;
+  height: 30px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button{
+  font-family: 'HelveticaNeue';
+  font-size: 50px;
+  color: #29abe2;
+  background-color: #012d51;
+  margin:auto;
+  height: auto;
+  width: auto;
+}
+
+.button:hover{
+  cursor:pointer;
+}
+
+.form label{
+  font-family: 'RobotoLight';
+}
+
+/*Lista de Cadastro*/
+
+#lista {
+  color: #29abe2;
+  margin: auto;
+  padding: 3%;
+}
+
+
+@media screen and (min-width: 800px){
+
+footer {
+  background: url(../imagens/rodape-desktop.jpg);
+  text-align: center;
+  letter-spacing: var(--spacing);
+  margin-bottom: 0;
+}
+}
+
+
+#spanContainer{
+  text-align: center;
+  color: white;
+  padding-top: 5%;
+}
+
+span{
+  margin: auto;
+}
+
+#spanEmail{
+  text-transform: lowercase;
+}
+
+.top-link {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--clr-secondary);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  animation: bounce 2s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+}
+.show-link {
+  visibility: visible;
+  z-index: 100;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Prova Fullstack</title>
+      <link rel="stylesheet" href="estagio.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+<body>
+      <!--Header-->
+      <header id="home">
+            <!--Navbar-->
+            <nav id="nav">
+                  <div class="nav-center">
+
+                        <div class="nav-header">
+                              <img src="../imagens/logo-in8-dev.svg" alt="logo" class="logo">
+                        </div>
+                        <div class="links-container" id="links-container">
+                              <button class="sidebar-toggle" id="navToggle">
+                                    <i class="fas fa-bars"></i>
+                              </button>
+                               <ul class="links" id="links">
+                                    <li>
+                                          <a href="#cadastro" class="scroll-link">cadastro</a>
+                                    </li>
+                                    <li>
+                                          <a href="#lista" class="scroll-link">lista</a>
+                                    </li>
+                                    <li>
+                                          <a href="#sobre" class="scroll-link">sobre mim</a>
+                                    </li>
+                              </ul>
+                           
+                        </div>
+                  </div>
+            </nav>
+            <!--banner-->
+            <div class="banner">
+                  <div class="container">
+                        <h1>estágio</h1>
+                        <h2>prova de seleção</h2>
+                  </div>
+            </div>
+      </header>
+      <!--Cadastro-->
+      <section id="cadastro" class="section">
+            <div class="title">
+              <h1>cadastro</h1>
+            </div>
+            <br>
+            <form class="form" id="form">
+                  <label for="input">Nome</label>
+                  <br>
+                  <input type="text" id="nomeVal" >
+                  <br>
+                  <label for="input">E-Mail</label>
+                  <br>
+                  <input type="text" id="emailVal">
+                  <br>
+                  <label for="input">Nascimento</label>
+                  <br>
+                  <input type="text" id="nascimentoVal" > 
+                  <br>
+                  <label for="input">Telefone</label>
+                  <br>
+                  <input type="text" id="telefoneVal">
+                  <br>
+                  <br>
+            </form>
+            <button type="button" class="button" onclick="submitForm(nomeVal.value, emailVal.value, nascimentoVal.value, telefoneVal.value)"> CADASTRAR </button>
+
+      </section>
+       <!-- Lista -->
+    <section id="lista" class="section">
+      <div class="title">
+        <h1>lista de cadastro</h1>
+        <br>
+      </div>
+      <div class="table-container">
+      <table class="table" id="table">
+            <tr>
+                  <th id="firstTH"></th>
+                  <th>Nome</th>
+                  <th>E-Mail</th>
+                  <th>Nascimento</th>
+                  <th>Telefone</th>
+            </tr>
+      </table>
+</div>
+    
+
+    
+    </section>
+    <!-- footer -->
+    <footer class="section">
+      <div id="spanContainer">
+            <p> 
+                  <span id="spanNome">Fulano Beltrano de Oliveira da Silva</span>
+                  <br><br>
+                  <span id="spanEmail">fulanobos@gmail.com</span> 
+                  <br><br>
+                  <span id="spanTelefone">(31) 9 9666-1111</span>
+                  <br><br>
+                  <span id="spanFaculdade"> Faculdade de Belo Horizonte</span>
+            </p>
+      </div>
+    </footer>
+    <a  class="scroll-link top-link" href="#home">
+      <img src="../icones/topo-pag.svg" alt="">
+    </a>
+
+      <script src="index.js"></script>
+</body>
+</html>
